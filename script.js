@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2つの音声ファイルのURLリスト
     const soundUrls = [
         "https://pub-aab82de189cc4de2ab98d01648c8b06c.r2.dev/nc116455_%E3%82%84%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AD%E3%81%87%EF%BC%81.wav",
-        "https://pub-aab82de189cc4de2ab98d01648c8b06c.r2.dev/nc51910_%E3%83%B3%E3%82%A2%E3%83%83%E3%83%BC%EF%BC%81.mp3" // 2つ目の音声ファイルのURLをここに追加
+        "https://pub-aab82de189cc4de2ab98d01648c8b06c.r2.dev/nc51910_%E3%83%B3%E3%82%A2%E3%83%83%E3%83%BC%EF%BC%81.mp3"
     ];
 
     let audio = null; // 現在の音声オブジェクトを保持する変数
