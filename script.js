@@ -8,22 +8,29 @@ document.addEventListener('DOMContentLoaded', function() {
         "https://pub-aab82de189cc4de2ab98d01648c8b06c.r2.dev/nc51910_%E3%83%B3%E3%82%A2%E3%83%83%E3%83%BC%EF%BC%81.mp3"
     ];
 
-    let audio = null; // 現在の音声オブジェクトを保持する変数
+    // 音声オブジェクトを事前に作成し、ロードしておく
+    const audioObjects = soundUrls.map(url => {
+        const audio = new Audio(url);
+        audio.load(); // 事前にロード
+        return audio;
+    });
+
+    let currentAudio = null; // 現在の音声オブジェクトを保持する変数
 
     image.addEventListener('click', function() {
-        // ランダムに音声ファイルを選択
-        const randomIndex = Math.floor(Math.random() * soundUrls.length);
-        const selectedSoundUrl = soundUrls[randomIndex];
+        // ランダムに音声オブジェクトを選択
+        const randomIndex = Math.floor(Math.random() * audioObjects.length);
+        const selectedAudio = audioObjects[randomIndex];
         
         // 既存の音声が再生中の場合は停止する
-        if (audio) {
-            audio.pause();
-            audio.currentTime = 0; // 再生位置をリセット
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0; // 再生位置をリセット
         }
         
         // 新しい音声を再生
-        audio = new Audio(selectedSoundUrl);
-        audio.play();
+        currentAudio = selectedAudio;
+        currentAudio.play();
     });
 
     // 右クリックを無効にする
