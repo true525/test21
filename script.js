@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 音声オブジェクトを事前に作成し、ロードしておく
     const audioObjects = soundUrls.map(url => {
         const audio = new Audio(url);
-        audio.load(); // 事前にロード
+        audio.preload = 'auto'; // 自動的にロード
         return audio;
     });
 
@@ -36,5 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 右クリックを無効にする
     image.addEventListener('contextmenu', function(e) {
         e.preventDefault();
+    });
+
+    // 事前に音声ファイルをロード
+    window.addEventListener('load', function() {
+        audioObjects.forEach(audio => {
+            audio.load();
+        });
     });
 });
