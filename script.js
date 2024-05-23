@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const image = document.getElementById('clickable-image');
     
-    // 2つの音声ファイルのURLリスト
+    // 7つの音声ファイルのURLリスト
     const soundUrls = [
         "https://pub-aab82de189cc4de2ab98d01648c8b06c.r2.dev/nc116455_%E3%82%84%E3%82%8A%E3%81%BE%E3%81%99%E3%81%AD%E3%81%87%EF%BC%81.wav",
         "https://pub-aab82de189cc4de2ab98d01648c8b06c.r2.dev/nc116912_Foo%E2%86%91%E6%B0%97%E6%8C%81%E3%81%A1%E3%81%84%E3%81%84%E3%82%A3%EF%BD%9E.mp3",
